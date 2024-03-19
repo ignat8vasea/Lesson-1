@@ -1,2 +1,16 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include <iostream>
+
+using namespace std;
+
+int main() {
+int numar1, numar2, media;
+    
+cout << "Introduceti primul numar: ";
+cin >> numar1;
+cout << "Introduceti al doilea numar: ";
+cin >> numar2;
+media = (numar1 + numar2) / 2;
+cout << "Media numerelor este: " << media << endl;
+
+    return 0;
+}

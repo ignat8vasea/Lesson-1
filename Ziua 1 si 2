@@ -1,0 +1,134 @@
+Ziua 1
+Calcularea Mediei:
+
+#include <iostream>
+using namespace std;
+int main() {
+    double num1, num2;
+    cout << "Introduceti primul numar: ";
+    cin >> num1;
+    cout << "Introduceti al doilea numar: ";
+    cin >> num2;
+    cout << "Media numerelor este: " << (num1 + num2) / 2;
+    return 0;
+}
+
+Joc de Ghicire:
+•	Creează un program care generează un număr aleatoriu între 1 și 100. Utilizatorul încearcă să ghicească numărul și primește indicii dacă răspunsul său este prea mare sau prea mic.
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main() {
+    srand(time(0));
+    int numarSecret = rand() % 100 + 1;
+    int ghicire = 0;
+    cout << "Ghiceste numarul intre 1 si 100: ";
+    do {
+   cin >> ghicire;
+        if (ghicire > numarSecret) {
+         cout << "Prea mare! Incearca din nou: ";
+        } else if (ghicire < numarSecret) {
+        cout << "Prea mic! Incearca din nou: ";
+        }
+    } while (ghicire != numarSecret);
+    cout << "Felicitari! Ai ghicit numarul!";
+    return 0;
+}
+
+Zaruri
+Implementează un joc de zaruri în care utilizatorul încearcă să ghicească suma a două zaruri aruncate. Dacă suma este 7 sau 11, utilizatorul câștigă; dacă este 2, 3 sau 12, utilizatorul pierde; în orice alt caz, jocul continuă.
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int suma, ghicire;
+    while (true) {
+        int zar1 = rand() % 6 + 1;
+        int zar2 = rand() % 6 + 1;
+        suma = zar1 + zar2;
+        cout << "Ghiceste suma celor doua zaruri: ";
+        cin >> ghicire;
+        if (ghicire == suma) {
+            if (suma == 7 || suma == 11) {
+                cout << "Ai ghicit suma " << suma << "! Ai castigat!";
+            } else if (suma == 2 || suma == 3 || suma == 12) {
+                cout << "Ai ghicit suma " << suma << ", dar din pacate ai pierdut.";
+            } else {
+                cout << "Ai ghicit suma " << suma << "! Dar jocul continua.";
+            }
+            break;
+        } else {
+            cout << "Ghicire incorecta. Mai incearca!" << endl;
+        }
+    }
+    return 0;
+}
+
+
+Ziua 2.
+Verificare Paritate:
+Solicită utilizatorului să introducă un număr și afișează un mesaj care indică dacă numărul este par sau impar.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numar;
+    cout << "Introduceti un numar: ";
+    cin >> numar;
+    if (numar % 2 == 0) {
+        cout << "Numarul este par.";
+    } else {
+        cout << "Numarul este impar.";
+    }
+    return 0;
+}
+
+
+Calcularea Puterii:
+Solicită utilizatorului să introducă o bază și un exponent și calculează rezultatul ridicării la putere.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double baza, exponent, rezultat;
+    cout << "Introduceti baza: ";
+    cin >> baza;
+    cout << "Introduceti exponentul: ";
+    cin >> exponent;
+    rezultat = pow(baza, exponent);
+    cout << "Rezultatul ridicarii la putere este: " << rezultat;
+    return 0;
+}
+
+Gestionarea Intrărilor Utilizatorului:
+Scrie un program care primește o serie de numere de la utilizator până când acesta introduce un număr negativ. Calculează suma și media numerelor introduse.
+#include <iostream>
+using namespace std;
+
+int main() {
+    double numar, suma = 0;
+    int count = 0;
+
+    while(true) {
+        cout << "Introduceti un numar (un numar negativ pentru a termina): ";
+        cin >> numar;
+        if (numar < 0) break;
+        suma += numar;
+        count++;
+    }
+
+    if (count > 0) {
+        cout << "Suma numerelor este: " << suma << endl;
+        cout << "Media numerelor este: " << suma / count;
+    } else {
+        cout << "Niciun numar valid introdus.";
+    }
+
+    return 0;
+}
